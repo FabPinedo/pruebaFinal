@@ -21,5 +21,25 @@ public class EmpresaServiceImpl implements IEmpresaService{
 	public List<EmpresaEntity> findAll() {
 		return (List<EmpresaEntity>) EmpresaDAO.findAll();
 	}
+
+	@Override
+	@Transactional
+	public void save(EmpresaEntity empresa) {
+		this.EmpresaDAO.save(empresa);
+	}
+
+	@Override
+	@Transactional
+	public void deleteID(String cod_Empresa) {
+		// TODO Auto-generated method stub
+		EmpresaDAO.deleteById(cod_Empresa);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public EmpresaEntity findById(String cod_Empresa) {
+		// TODO Auto-generated method stub
+		return EmpresaDAO.findById(cod_Empresa).orElse(null);
+	}
 	
 }

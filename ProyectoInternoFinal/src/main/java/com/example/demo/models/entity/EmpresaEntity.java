@@ -13,7 +13,6 @@ import javax.persistence.Table;
 @Table(name="MAE_EMPRESAS")
 public class EmpresaEntity implements Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	//@Column(name="COD_EMPRESA")
 	String cod_Empresa;
 	//@Column(name="DES_RAZON_SOCIAL")
